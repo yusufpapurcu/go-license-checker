@@ -11,7 +11,7 @@ runs:
       id: go
 
     - name: Get google/go-licenses package
-      run: go get github.com/google/go-licenses
+      run: go install github.com/google/go-licenses@latest
       shell: bash
 
     - name: Run Check
