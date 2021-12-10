@@ -1,0 +1,17 @@
+name: 'Go License Checker'
+author: 'yusufpapurcu'
+description: 'Check licenses in your go package'
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Go 1.16
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+      id: go
+
+    - name: Get google/go-licenses package
+      run: go get github.com/google/go-licenses
+
+    - name: Run Check
+      run: go-licenses csv .
