@@ -15,7 +15,7 @@ runs:
       shell: bash
 
     - name: Run Check
-      run: ${{ github.action_path }}/goodbye.sh
+      run: ${{ github.action_path }}/check.sh
       shell: bash
     
     - name: Get them as csv
