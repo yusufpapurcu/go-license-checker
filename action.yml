@@ -12,6 +12,12 @@ runs:
 
     - name: Get google/go-licenses package
       run: go get github.com/google/go-licenses
+      shell: bash
 
     - name: Run Check
+      run: go-licenses check .
+      shell: bash
+    
+    - name: Get them as csv
       run: go-licenses csv .
+      shell: bash
