@@ -4,6 +4,7 @@ if [ -z "$output" ]; then
     echo "License Check Success"
     exit 0
 else
+    echo "$output"
     echo "License Check Failed"
     exit 1
 fi
