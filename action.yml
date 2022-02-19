@@ -22,9 +22,9 @@ runs:
     - run: |
         if echo ${{ inputs.runVendor }} | grep -c "true"
           then
-            echo "Skipping Vendoring Step"
-          else
             go mod vendor
+          else
+            echo "Skipping Vendoring Step"          
           fi
       shell: bash
 
