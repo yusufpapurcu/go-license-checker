@@ -1,6 +1,12 @@
 name: 'Go License Checker'
 author: 'yusufpapurcu'
 description: 'Check licenses in your go package'
+
+inputs:
+  run_vendor:
+    description: "If set false, action won't do `go mod vendor`"
+    default: true
+
 branding:
   icon: file-text
   color: green
@@ -12,6 +18,11 @@ runs:
       with:
         go-version: 1.16
       id: go
+
+    - name: Run go mod vendor
+      if: ${{ INPUT_RUN_VENDOR }}
+      run: go mod vendor
+      shell: bash
 
     - name: Get google/go-licenses package
       run: go install github.com/google/go-licenses@latest
