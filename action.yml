@@ -19,6 +19,15 @@ runs:
         go-version: 1.16
       id: go
 
+    - run: |
+        if echo ${{ inputs.runVendor }} | grep -c "true"
+          then
+            echo "Skipping Vendoring Step"
+          else
+            go mod vendor
+          fi
+      shell: bash
+
     - name: Run go mod vendor
       if: inputs.runVendor == 'true'
       run: go mod vendor
