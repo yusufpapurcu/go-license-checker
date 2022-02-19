@@ -20,7 +20,7 @@ runs:
       id: go
 
     - name: Run go mod vendor
-      if: ${{ github.event.inputs.runVendor == 'true' }}
+      if: github.event.inputs.runVendor == 'true'
       run: go mod vendor
       shell: bash
 
