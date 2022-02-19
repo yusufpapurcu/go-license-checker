@@ -3,7 +3,7 @@ author: 'yusufpapurcu'
 description: 'Check licenses in your go package'
 
 inputs:
-  run_vendor:
+  runVendor:
     description: "If set false, action won't do `go mod vendor`"
     default: true
 
@@ -20,7 +20,7 @@ runs:
       id: go
 
     - name: Run go mod vendor
-      if: ${{ INPUT_RUN_VENDOR }}
+      if: ${{ INPUT_RUNVENDOR }}
       run: go mod vendor
       shell: bash
 
